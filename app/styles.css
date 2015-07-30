@@ -1,0 +1,35 @@
+body {
+  background: #2C2140;
+  font-family: 'Roboto', sans-serif;
+}
+
+.content-container {
+  background: #F24957;
+  border: 3px solid #F24957;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#name {
+  display: inline-block;
+  background: #3D5A73;
+  border: 3px solid #F24957;
+  border-radius: 7px;
+}
+
+#name-text {
+  font-size: 25px;
+  color: #AAF263;
+}
+
+.word-container {
+  display: inline-block;
+}
+
+.word-anchor {
+  font-size: 25px;
+  color: #AAF263;
+}
+

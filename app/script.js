@@ -23,4 +23,20 @@ $(function() {
     });
   });
 
+  //Event handler that sends POST request to server
+  //when button is pressed
+  $('#submitNames').on('submit', function(e) {
+    e.preventDefault();
+    var adjective = $('input[name=adjective]').val();
+    var adjectivePost;
+    if (adjective) {
+      adjectivePost = {word: adjective};
+      $.post('adjective', adjectivePost, function(response) {
+        console.log(response);
+        var adjectiveRes = response.message;
+        $('#adjectiveResponse').text(adjectiveRes);
+      });
+    }
+  });
+
 });
