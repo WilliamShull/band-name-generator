@@ -28,13 +28,33 @@ $(function() {
   $('#submitNames').on('submit', function(e) {
     e.preventDefault();
     var adjective = $('input[name=adjective]').val();
+    var noun = $('input[name=noun]').val();
+    var verb = $('input[name=verb]').val();
     var adjectivePost;
+    var nounPost;
+    var verbPost;
+
     if (adjective) {
       adjectivePost = {word: adjective};
       $.post('adjective', adjectivePost, function(response) {
-        console.log(response);
         var adjectiveRes = response.message;
         $('#adjectiveResponse').text(adjectiveRes);
+      });
+    }
+
+    if (noun) {
+      nounPost = {word: noun};
+      $.post('noun', nounPost, function(response) {
+        var nounRes = response.message;
+        $('#nounResponse').text(nounRes);
+      });
+    }
+
+    if (verb) {
+      verbPost = {word: verb};
+      $.post('verb', verbPost, function(response) {
+        var verbRes = response.message;
+        $('#verbResponse').text(verbRes);
       });
     }
   });
